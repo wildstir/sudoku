@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Судоку</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <script type="text/javascript" src="./sudoku.js"></script>
+</head>
+<body onkeydown="Move(event)" style="background-color: white;">
+<div id="sudcen">
+<div id="topset">
+<div id="tsp" onclick="verification();">Проверка</div>
+<div id="setpack">
+<img src="./staron.png" class="imgstr" onclick="lvlchs(1);"><img src="./staroff.png" class="imgstr" onclick="lvlchs(2);"><img src="./staroff.png" class="imgstr" onclick="lvlchs(3);"><img src="./figureoff.png" class="imgstr" onclick="lvlchs(4);">
+<img src="./set.png" id="set" onclick="settings();">
+<div id="info">
+<h1>Судоку</h1>
+<h2>!Войти или Зарегистрироваться</h2>
+<h2><span onclick="zoom(3);">Увеличить</span> / <span onclick="zoom(-3);">Уменьшить</span></h2>
+<h2>!Включить цвета</h2>
+<h2 onclick="timeopenque()">Показать ответ</h2>
+<h2>!Сообщить о проблеме</h2>
+<span id="que" title="Как играть?">?</span>
+</div>
+</div>
+</div>
+<!--<input type="submit" onclick="verification();" value="Сверить">-->
+<table id="sudtab">
+	<tbody><tr><td onclick="choose(0);" style="background-color: lightgrey;"> </td><td onclick="choose(1);" style="background-color: lightgrey;"> </td><td class="br" onclick="choose(2);" style="background-color: white;">6</td><td onclick="choose(3);" style="background-color: lightgrey;"> </td><td onclick="choose(4);" style="background-color: white;">1</td><td class="br" onclick="choose(5);" style="background-color: white;">7</td><td onclick="choose(6);" style="background-color: white;">5</td><td onclick="choose(7);" style="background-color: white;">2</td><td onclick="choose(8);" style="background-color: lightgrey;"> </td></tr>
+	<tr><td onclick="choose(9);" style="background-color: lightgrey;"> </td><td onclick="choose(10);" style="background-color: white;">5</td><td class="br" onclick="choose(11);" style="background-color: white;">3</td><td onclick="choose(12);" style="background-color: lightgrey;"> </td><td onclick="choose(13);" style="background-color: lightgrey;"> </td><td class="br" onclick="choose(14);" style="background-color: white;">8</td><td onclick="choose(15);" style="background-color: lightgrey;"> </td><td onclick="choose(16);" style="background-color: white;">4</td><td onclick="choose(17);" style="background-color: lightgrey;"> </td></tr>
+	<tr><td class="bb" onclick="choose(18);" style="background-color: white;">2</td><td class="bb" onclick="choose(19);" style="background-color: lightgrey;"> </td><td class="brb" onclick="choose(20);" style="background-color: lightgrey;"> </td><td class="bb" onclick="choose(21);" style="background-color: white;">5</td><td class="bb" onclick="choose(22);" style="background-color: white;">6</td><td class="brb" onclick="choose(23);" style="background-color: white;">4</td><td class="bb" onclick="choose(24);" style="background-color: white;">3</td><td class="bb" onclick="choose(25);" style="background-color: lightgrey;"> </td><td class="bb" onclick="choose(26);" style="background-color: white;">7</td></tr>
+	<tr><td onclick="choose(27);" style="background-color: lightgrey;"> </td><td onclick="choose(28);" style="background-color: lightgrey;"> </td><td class="br" onclick="choose(29);" style="background-color: lightgrey;"> </td><td onclick="choose(30);" style="background-color: white;">8</td><td onclick="choose(31);" style="background-color: white;">7</td><td class="br" onclick="choose(32);" style="background-color: lightgrey;"> </td><td onclick="choose(33);" style="background-color: white;">4</td><td onclick="choose(34);" style="background-color: white;">9</td><td onclick="choose(35);" style="background-color: white;">1</td></tr>
+	<tr><td onclick="choose(36);" style="background-color: white;">9</td><td onclick="choose(37);" style="background-color: lightgrey;"> </td><td class="br" onclick="choose(38);" style="background-color: white;">7</td><td onclick="choose(39);" style="background-color: lightgrey;"> </td><td onclick="choose(40);" style="background-color: white;">4</td><td class="br" onclick="choose(41);" style="background-color: white;">3</td><td onclick="choose(42);" style="background-color: lightgrey;"> </td><td onclick="choose(43);" style="background-color: white;">5</td><td onclick="choose(44);" style="background-color: lightgrey;"> </td></tr>
+	<tr><td class="bb" onclick="choose(45);" style="background-color: white;">1</td><td class="bb" onclick="choose(46);" style="background-color: white;">6</td><td class="brb" onclick="choose(47);" style="background-color: white;">4</td><td class="bb" onclick="choose(48);" style="background-color: white;">2</td><td class="bb" onclick="choose(49);" style="background-color: lightgrey;"> </td><td class="brb" onclick="choose(50);" style="background-color: white;">9</td><td class="bb" onclick="choose(51);" style="background-color: lightgrey;"> </td><td class="bb" onclick="choose(52);" style="background-color: lightgrey;"> </td><td class="bb" onclick="choose(53);" style="background-color: lightgrey;"> </td></tr>
+	<tr><td onclick="choose(54);" style="background-color: white;">5</td><td onclick="choose(55);" style="background-color: lightgrey;"> </td><td class="br" onclick="choose(56);" style="background-color: white;">8</td><td onclick="choose(57);" style="background-color: lightgrey;"> </td><td onclick="choose(58);" style="background-color: lightgrey;"> </td><td class="br" onclick="choose(59);" style="background-color: lightgrey;"> </td><td onclick="choose(60);" style="background-color: white;">2</td><td onclick="choose(61);" style="background-color: lightgrey;"> </td><td onclick="choose(62);" style="background-color: white;">4</td></tr>
+	<tr><td onclick="choose(63);" style="background-color: white;">4</td><td onclick="choose(64);" style="background-color: white;">9</td><td class="br" onclick="choose(65);" style="background-color: lightgrey;"> </td><td onclick="choose(66);" style="background-color: white;">7</td><td onclick="choose(67);" style="background-color: white;">3</td><td class="br" onclick="choose(68);" style="background-color: white;">2</td><td onclick="choose(69);" style="background-color: lightgrey;"> </td><td onclick="choose(70);" style="background-color: lightgrey;"> </td><td onclick="choose(71);" style="background-color: lightgrey;"> </td></tr>
+	<tr><td onclick="choose(72);" style="background-color: white;">6</td><td onclick="choose(73);" style="background-color: white;">7</td><td class="br" onclick="choose(74);" style="background-color: white;">2</td><td onclick="choose(75);" style="background-color: white;">4</td><td onclick="choose(76);" style="background-color: white;">8</td><td class="br" onclick="choose(77);" style="background-color: lightgrey;"> </td><td onclick="choose(78);" style="background-color: white;">9</td><td onclick="choose(79);" style="background-color: lightgrey;"> </td><td onclick="choose(80);" style="background-color: white;">3</td></tr>
+</tbody></table>
+<table>
+	<tbody><tr>
+		<td class="smph" onclick="innernum(1);">1</td>
+		<td class="smph" onclick="innernum(2);">2</td>
+		<td class="smphr" onclick="innernum(3);">3</td>
+		<td class="smph" onclick="innernum(4);">4</td>
+		<td class="smph" onclick="innernum(5);">5</td>
+		<td class="smphr" onclick="innernum(6);">6</td>
+		<td class="smph" onclick="innernum(7);">7</td>
+		<td class="smph" onclick="innernum(8);">8</td>
+		<td class="smph" onclick="innernum(9);">9</td>
+	</tr>
+</tbody></table>
+</div>
+<p id="ver">0.7b</p>
+</body></html>

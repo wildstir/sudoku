@@ -1,0 +1,177 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+body {
+   font-family: Segoe UI;
+	cursor: default;
+}
+header {
+   text-align: center;
+}
+body {
+	transition-duration: 1s;
+}
+h2 {
+   font-size: 16px;
+   border-bottom: 1px solid black;
+   padding: 0px 5px;
+   margin: 8px 0px;
+   cursor: pointer;
+}
+input {
+	background-color: grey;
+	color: white;
+	font-size: 17px;
+	text-align: center;
+   position: absolute;
+   top: 6px;
+	width: 160px;
+	border: 0px;
+	height: 28px;
+	cursor: pointer;
+}
+input:focus {
+   outline: 0;
+}
+input:active {
+   background-color: lightgrey;
+}
+table {
+	font-family: Arial;
+	/*background-image: url("p.jpg") !important;*/
+	border-collapse: collapse;
+	margin-bottom: 5px;
+	border:2px solid black;
+}
+td {
+	width: 42px;
+	height: 42px;
+	color: black;
+	font-size: 35px;
+	border: 1px solid grey;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+}
+td:hover {
+	background-color: lightblue !important;
+}
+	
+.br {
+	border-right: 2px solid black;
+}
+.bb {
+	border-bottom: 2px solid black;
+}
+.brb {
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+}
+.smph {
+	background-color: white;
+	border: 1px solid grey;
+	cursor: pointer;
+}
+.smphr {
+	background-color: white;
+	border-right: 2px solid black;
+	cursor: pointer;
+}
+.imgstr {
+	width: 36px;
+	padding-right: 6px;
+	height: 36px;
+	cursor: pointer;
+}
+
+#sudtab {
+   margin-top: 43px;
+}
+#setpack {
+	position: absolute;
+   right: 0px;
+}
+#topset {
+   width: 100%;
+   position: relative;
+}
+#sudcen {
+	width: 392px;
+	height: 486px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+}
+#que {
+	font-size: 20px;
+	font-weight: 600;
+	background-color: rgba(0,0,0,0.1);
+	text-align: right;
+   position: absolute;
+	bottom: 0px;
+   right: 0px;
+   height: 28px;
+   width: 21px;
+   padding-right: 9px;
+   display: inline-block;
+   border-radius: 19px 0px 0px 0px;
+	color: black;
+	/*color: rgba(255,255,255,0.9);*/
+	cursor: pointer;
+}
+#que:hover {
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+}
+#set {
+	width: 31px;
+	height: 31px;
+	cursor: pointer;
+   position: relative;
+   bottom: 2px;
+   padding: 0px 3px 0px 3px;
+   z-index: 1;
+	/*-webkit-transition:ease-out 0.5s;*/
+}
+#set:hover {
+   animation: rotate 3s linear infinite;
+}
+@keyframes rotate {
+	0% {transform: rotate(0deg);}
+	20% {transform: rotate(360deg);}
+   100% {transform: rotate(180deg);}
+}
+#info {
+	background-color: rgb(222,222,222);
+	position: absolute;
+	padding: 3px 45px 8px 7px;
+   width: 265px;
+   top: 0px;
+	right: 0px;
+	border: 1px solid  rgba(0,0,0,0.5);
+	border-radius: 3px 14px 3px 3px;
+	box-shadow: 0px 0px 3px black;
+	display: none;
+}
+#tsp {
+   background-color: rgb(66, 66, 66);
+	color: white;
+	font-size: 20px;
+   width: 120px;
+   padding: 4px 10px 8px 10px;
+	text-align: center;
+	cursor: pointer;
+   float: left;
+}
+#ver {
+   position: absolute;
+   font-size: 12px;
+   bottom: 1px;
+   right: 1px;
+}
